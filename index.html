@@ -5,14 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test</title>
+    <style>
+        button
+        {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: xx-large;
+        }
+        div
+        {
+            text-align: center;
+            font-size: xx-large;
+        }
+    </style>
 </head>
-<body>
-        <button onclick="click()">Click here!</button>
+<body ng-app = "myApp" ng-controller="myController">
+        <button ng-click="click()">Click here!</button>
+
+        <div>{{name}}</div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
         <script>
-            function click()
-            {
-                document.write("Hiếu ngu")
-            }
+            var app = angular.module('myApp', []); 
+    app.controller("myController", function($scope){
+        $scope.click = function(){
+        $scope.name = "Hiếu ngu";
+    }
+    });
         </script>
 </body>
 </html>
